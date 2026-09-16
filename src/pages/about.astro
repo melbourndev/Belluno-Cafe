@@ -1,0 +1,152 @@
+---
+/** About — hero slider, story, arch split with stats, moments scroller. */
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<SiteLayout
+  title="About — Belluno Cafe, VIP Road Vesu Surat"
+  description="The Belluno story: a European villa softened by Bali. Rooftop seating, wood-fired kitchen, open daily till midnight in Vesu, Surat."
+  active="about"
+>
+  <!-- 1 · HERO SLIDER -->
+  <section class="relative min-h-[92dvh] overflow-hidden flex flex-col justify-end" aria-label="Belluno spaces">
+    <img id="heroA" src="/assets/rooftop-1.jpg" alt="Rooftop deck at golden hour" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" />
+    <img id="heroB" src="/assets/rooftop-2.jpg" alt="Evening settle on the rooftop" class="absolute inset-0 w-full h-full object-cover opacity-0" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 w-full pb-10 pt-40">
+      <h1 class="font-extrabold uppercase text-cream leading-[0.88] tracking-[-0.02em] text-[19vw] sm:text-[13vw] lg:text-[10rem]">Sip<br />slow.</h1>
+      <div class="mt-6 flex flex-wrap items-end justify-between gap-4">
+        <div class="bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 max-w-[16rem] text-cream">
+          <p class="text-[11px] tracking-[0.2em] uppercase text-cream/70">Since 2026</p>
+          <p class="text-sm font-medium mt-1 leading-snug">Villa calm, Bali greens, on VIP Road</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="heroCount" class="text-cream/80 text-xs font-semibold tracking-widest mr-1">01 / 02</span>
+          <button id="heroPrev" class="w-11 h-11 rounded-full bg-cream text-ink hover:bg-white active:scale-[0.98] transition font-bold" aria-label="Previous photo">←</button>
+          <button id="heroNext" class="w-11 h-11 rounded-full bg-cream text-ink hover:bg-white active:scale-[0.98] transition font-bold" aria-label="Next photo">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- 2 · STORY -->
+    <section class="max-w-6xl mx-auto px-4 py-20 sm:py-28 reveal">
+      <div class="flex items-center gap-3 text-xs text-neutral-500">
+        <span class="w-7 h-7 rounded-full border border-black/20 grid place-items-center font-serif italic">A</span>
+        <span class="tracking-[0.2em] uppercase">Our story</span>
+        <span class="flex-1 border-t border-black/10"></span>
+      </div>
+      <div class="mt-8 grid lg:grid-cols-2 gap-10">
+        <h2 class="font-extrabold uppercase leading-[0.95] tracking-tight text-4xl sm:text-6xl">A European villa,<br />softened by Bali</h2>
+        <div class="grid sm:grid-cols-2 gap-6 text-sm text-neutral-600 leading-relaxed">
+          <p>Smooth curves, warm light, rich green. Belluno was drawn like a boutique villa and planted like a Balinese garden, right on VIP Road.</p>
+          <div>
+            <p>Slow coffee dates, deep conversations, peaceful evenings. Every corner poured for lingering, every plate built for sharing.</p>
+            <a href="/contact" class="btn-fill btn-fill-dark inline-flex items-center gap-2 mt-5 bg-ink text-cream text-sm font-semibold pl-5 pr-2 py-2 rounded-full"
+              >Plan your visit <span class="w-8 h-8 rounded-full bg-cream/15 grid place-items-center">→</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · ARCH SPLIT + STATS -->
+    <section class="max-w-6xl mx-auto px-4 pb-20 sm:pb-28 grid lg:grid-cols-2 gap-6 items-stretch reveal">
+      <div class="relative overflow-hidden rounded-t-[10rem] rounded-b-[1.75rem] min-h-[26rem] sm:min-h-[32rem]">
+        <img src="/assets/kitchen.jpg" alt="Plates leaving the Belluno kitchen" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" aria-hidden="true"></div>
+        <div class="absolute bottom-4 inset-x-4 flex items-stretch gap-2">
+          <div class="flex-1 bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 text-cream"><p class="font-serif text-3xl">4.6★</p><p class="text-xs text-cream/75 mt-0.5">891 verified reviews</p></div>
+          <div class="flex-1 bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 text-cream"><p class="font-serif text-3xl">12 dishes</p><p class="text-xs text-cream/75 mt-0.5">Brews, mocktails, kitchen</p></div>
+          <a href="/menu" aria-label="See the menu" class="w-14 rounded-2xl bg-cream text-ink grid place-items-center text-xl hover:bg-white active:scale-[0.98] transition">↗</a>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <div class="overflow-hidden rounded-t-[10rem] rounded-b-[1.75rem] h-60 sm:h-72 shrink-0">
+          <img src="/assets/stairs.jpg" alt="Curved stairs climbing to the rooftop" loading="lazy" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex items-end gap-3 mt-6">
+          <p class="font-serif font-medium leading-none text-7xl sm:text-8xl text-pine">12<span class="text-3xl align-top">AM</span></p>
+          <p class="text-sm text-neutral-500 pb-2">Open every day,<br />late into the night</p>
+        </div>
+        <ul class="mt-5 space-y-2.5 text-sm font-medium">
+          <li class="flex gap-2.5"><span class="text-pine font-bold">✓</span> Rooftop seating under warm light</li>
+          <li class="flex gap-2.5"><span class="text-pine font-bold">✓</span> Wood-fired kitchen, honest coffee</li>
+          <li class="flex gap-2.5"><span class="text-pine font-bold">✓</span> Dine-in + takeaway, no rush</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4 · MOMENTS SCROLLER -->
+    <section class="max-w-6xl mx-auto px-4 pb-20 sm:pb-28 reveal">
+      <div class="flex items-center gap-3 text-xs text-neutral-500">
+        <span class="w-7 h-7 rounded-full border border-black/20 grid place-items-center font-serif italic">B</span>
+        <span class="tracking-[0.2em] uppercase">Moments</span>
+        <span class="flex-1 border-t border-black/10"></span>
+        <div class="flex gap-2">
+          <button id="mPrev" class="w-10 h-10 rounded-full border border-black/15 hover:bg-black/5 active:scale-[0.98] transition" aria-label="Scroll moments back">←</button>
+          <button id="mNext" class="w-10 h-10 rounded-full border border-black/15 hover:bg-black/5 active:scale-[0.98] transition" aria-label="Scroll moments forward">→</button>
+        </div>
+      </div>
+      <div id="mStrip" class="mt-8 grid grid-flow-col auto-cols-[78%] sm:auto-cols-[38%] gap-4 overflow-x-auto no-scrollbar snap-x pb-2">
+        {
+          [
+            ['/assets/drink-3.jpg', 'Berry mocktail over ice', 'Mocktail hour', 'Berries, mint, soda'],
+            ['/assets/food-1.jpg', 'Pink spaghetti', 'The cult favourite', 'Pink spaghetti, basil'],
+            ['/assets/rooftop-2.jpg', 'Rooftop at dusk', 'Golden hour deck', 'Come before sunset'],
+            ['/assets/food-4.jpg', 'Tiramisu cup', 'Save room', 'Tiramisu, mascarpone'],
+          ].map(([img, alt, t, s]) => (
+            <figure class="snap-start">
+              <div class="overflow-hidden rounded-[1.5rem] h-72 sm:h-96">
+                <img src={img} alt={alt} loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <figcaption class="mt-2.5 text-sm font-semibold">{t} <span class="block text-xs font-normal text-neutral-400">{s}</span></figcaption>
+            </figure>
+          ))
+        }
+      </div>
+      <div class="mt-12 bg-pine text-cream rounded-[2rem] p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+        <h2 class="font-serif font-medium text-3xl">Come see it in person.</h2>
+        <div class="flex flex-wrap gap-3">
+          <Button href="/menu" variant="cream">See the menu</Button>
+          <Button href="/contact" variant="creamOutline">Find us</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const a = document.getElementById('heroA');
+    const b = document.getElementById('heroB');
+    const count = document.getElementById('heroCount');
+    let showing = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    function show(i: number) {
+      showing = (i + 2) % 2;
+      a?.classList.toggle('opacity-0', showing === 1);
+      b?.classList.toggle('opacity-0', showing === 0);
+      if (count) count.textContent = showing === 0 ? '01 / 02' : '02 / 02';
+    }
+    function restart() {
+      if (timer) clearInterval(timer);
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        timer = setInterval(() => show(showing + 1), 7000);
+      }
+    }
+    document.getElementById('heroNext')?.addEventListener('click', () => {
+      show(showing + 1);
+      restart();
+    });
+    document.getElementById('heroPrev')?.addEventListener('click', () => {
+      show(showing - 1);
+      restart();
+    });
+    restart();
+    const strip = document.getElementById('mStrip');
+    document.getElementById('mNext')?.addEventListener('click', () => strip?.scrollBy({ left: 340, behavior: 'smooth' }));
+    document.getElementById('mPrev')?.addEventListener('click', () => strip?.scrollBy({ left: -340, behavior: 'smooth' }));
+  </script>
+</SiteLayout>

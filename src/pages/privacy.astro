@@ -1,0 +1,34 @@
+---
+/** Privacy policy — short, honest, cafe-scale. */
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+---
+
+<SiteLayout
+  title="Privacy Policy — Belluno Cafe, Vesu Surat"
+  description="How Belluno handles your details: contact forms, orders and site data. Vesu, Surat."
+>
+  <main id="main" class="max-w-3xl mx-auto px-4 pt-10 pb-20">
+    <Badge>Legal</Badge>
+    <h1 class="font-serif font-medium tracking-[-0.02em] text-4xl sm:text-6xl mt-3">Privacy policy.</h1>
+    <p class="text-sm text-neutral-500 mt-3">Last updated September 2026.</p>
+    <div class="mt-8 space-y-6 text-sm text-neutral-600 leading-relaxed">
+      <section>
+        <h2 class="font-serif font-medium text-2xl text-ink">What we collect</h2>
+        <p class="mt-2">When you write to us through the contact form, we receive your name, phone number, email address and message. When you build a tray on the menu page, quantities stay in your own browser — nothing is sent to us until you check out at the counter.</p>
+      </section>
+      <section>
+        <h2 class="font-serif font-medium text-2xl text-ink">How we use it</h2>
+        <p class="mt-2">Only to answer you: table requests, feedback and order queries. We do not sell details, run ad profiles, or share lists with third parties. The embedded Google Map loads under Google's own privacy terms.</p>
+      </section>
+      <section>
+        <h2 class="font-serif font-medium text-2xl text-ink">How long we keep it</h2>
+        <p class="mt-2">Messages live as long as the conversation needs them, then they are deleted. Ask us to forget you any time at <a class="underline underline-offset-4 font-semibold text-ink" href="tel:09274073791">092740 73791</a> and we will.</p>
+      </section>
+      <section>
+        <h2 class="font-serif font-medium text-2xl text-ink">Your rights</h2>
+        <p class="mt-2">Ask what we hold, fix it, or have it removed. One call does all three.</p>
+      </section>
+    </div>
+  </main>
+</SiteLayout>

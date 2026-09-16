@@ -1,0 +1,17 @@
+---
+/** shadcn-style eyebrow Badge — microscopic pill label above headings. */
+import { cn } from '../../lib/cn';
+
+type Props = { class?: string; dark?: boolean };
+const { class: cls, dark } = Astro.props as Props;
+---
+
+<span
+  class={cn(
+    'inline-block rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium',
+    dark ? 'bg-cream/10 text-cream/80' : 'bg-ink/5',
+    cls,
+  )}
+>
+  <slot />
+</span>

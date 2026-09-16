@@ -1,0 +1,37 @@
+---
+/** 404 — cinematic miss, standalone (no global nav/footer). */
+import BareLayout from '../layouts/BareLayout.astro';
+---
+
+<BareLayout title="404 — Belluno" description="Lost in the villa? Head back to Belluno, Vesu Surat.">
+  <style>
+    html, body { height: 100%; }
+    body { background: #1c1a16; }
+    .giant {
+      font-size: clamp(10rem, 34vw, 30rem); font-weight: 800; line-height: .8; letter-spacing: -0.04em;
+      background: linear-gradient(to bottom, #f8f6f0 30%, rgba(248,246,240,.15) 75%, rgba(248,246,240,0) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .btn-fill { position: relative; isolation: isolate; overflow: hidden; }
+    .btn-fill::before { content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; background: #15291e; transform: translateY(102%); transition: transform .55s cubic-bezier(0.16,1,0.3,1); }
+    .btn-fill:hover::before { transform: translateY(0); }
+    .btn-fill:hover { color: #f8f6f0; }
+  </style>
+  <main class="relative min-h-[100dvh] overflow-hidden flex items-center justify-center font-grotesk text-cream">
+    <img src="/assets/rooftop-1.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" />
+    <div class="absolute inset-0 bg-ink/55" aria-hidden="true"></div>
+    <div class="relative z-10 text-center px-4 pt-28 pb-16 select-none">
+      <p class="giant" aria-hidden="true">404</p>
+      <p class="font-serif italic text-cream/70 -mt-4 sm:-mt-8">error</p>
+      <h1 class="font-extrabold uppercase tracking-tight leading-none text-4xl sm:text-6xl mt-4">You missed the sip.</h1>
+      <p class="text-cream/75 text-sm mt-3 max-w-[42ch] mx-auto leading-relaxed">
+        Looks like the page you are craving did not make the menu. No worries, the coffee is still on.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href="/" class="btn-fill bg-cream text-ink font-semibold text-sm px-8 py-3.5 rounded-full min-h-[48px] inline-flex items-center">Get Me Home</a>
+        <a href="/menu" class="border border-cream/50 text-cream font-semibold text-sm px-8 py-3.5 rounded-full min-h-[48px] inline-flex items-center hover:bg-cream/10 active:scale-[0.98] transition-all">See menu</a>
+      </div>
+    </div>
+    <p class="absolute bottom-5 inset-x-0 z-10 text-center text-[11px] tracking-[0.25em] uppercase text-cream/50">Belluno · Vesu Surat · Open till midnight</p>
+  </main>
+</BareLayout>

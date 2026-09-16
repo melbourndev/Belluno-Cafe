@@ -1,0 +1,26 @@
+# Belluno — menu with prices (INR, inclusive of menu price; 5% GST at checkout)
+# Vesu, Surat. Dine-in + takeaway. No delivery. Updated September 2026.
+# Prices at the counter rule on the day.
+
+## Hot Brews
+- Espresso — 149 — Short, bold, honest.
+- Pistachio Latte — 249 — Nutty espresso, slow-steamed milk. (house signature)
+- Cold Brew Tonic — 229 — 18-hour brew, tonic, citrus peel. (house signature)
+- Classic Cappuccino — 199 — Double shot, velvet foam.
+- Filter Coffee — 169 — Slow-dripped, jaggery option.
+
+## Mocktails
+- Berry Mocktail — 199 — Fresh berries, mint, soda.
+- Virgin Mint Cooler — 179 — Mint, lime, crushed ice.
+
+## From the Kitchen
+- Pink Spaghetti — 279 — Rose sauce, basil, parmesan. (cult favourite)
+- Villa Platter — 329 — Sharing board, wood-fired bread.
+- Truffle Fries — 189 — Parmesan snow, truffle oil.
+- Tiramisu Cup — 169 — Espresso-soaked, mascarpone.
+- Choco Torte — 179 — Dark chocolate, sea salt.
+
+## Good to know
+- Open daily till 12:00 AM (midnight).
+- Address: VIP Rd, opp. Marina Grand Hospital, Vesu, Surat 395007.
+- Phone: 092740 73791.

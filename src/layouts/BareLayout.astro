@@ -1,0 +1,44 @@
+---
+/**
+ * Bare layout — admin + error pages. No global nav, no global footer.
+ * Admin gets its own slim utility bar; 404 is fully standalone.
+ */
+import '../styles/global.css';
+
+type Props = { title: string; description?: string; bar?: boolean };
+const { title, description = 'Belluno — Vesu, Surat.', bar } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/jpeg" href="/assets/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="font-grotesk bg-cream text-ink antialiased">
+    {
+      bar && (
+        <div class="max-w-4xl mx-auto px-4 pt-5 flex items-center justify-between text-sm">
+          <a href="/" class="flex items-center gap-2 font-extrabold">
+            <img src="/assets/logo.jpg" alt="Belluno logo" class="w-8 h-8 rounded-full object-cover" />
+            Belluno <span class="font-normal text-neutral-400">/ staff</span>
+          </a>
+          <a href="/menu" class="text-xs font-semibold px-4 py-2.5 rounded-full bg-ink text-cream">
+            View menu →
+          </a>
+        </div>
+      )
+    }
+    <slot />
+  </body>
+</html>

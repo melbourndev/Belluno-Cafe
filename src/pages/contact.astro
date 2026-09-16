@@ -1,0 +1,127 @@
+---
+/** Contact — photo-washed hero with joined map + form card, office strip. */
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import Button from '../components/ui/Button.astro';
+import Schema from '../components/Schema.astro';
+import { SITE, BUSINESS } from '../lib/site';
+
+const localSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CafeOrCoffeeShop',
+  name: 'Belluno',
+  url: SITE + '/contact',
+  telephone: BUSINESS.phone,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: BUSINESS.street,
+    addressLocality: BUSINESS.city,
+    addressRegion: BUSINESS.region,
+    postalCode: BUSINESS.postal,
+    addressCountry: BUSINESS.country,
+  },
+  openingHours: BUSINESS.hours,
+  hasMap: BUSINESS.maps,
+};
+---
+
+<SiteLayout
+  title="Contact — Belluno Cafe, Vesu Surat | Open Till Midnight"
+  description="Find Belluno on VIP Road, Vesu Surat — map, hours, phone 092740 73791. Open daily till midnight. Tables for tonight by call."
+  active="contact"
+>
+  <Schema data={localSchema} />
+  <main id="main" class="max-w-6xl mx-auto px-4 pt-10 pb-16">
+    <div class="relative overflow-hidden rounded-[2rem]">
+      <img src="/assets/stairs.jpg" alt="" aria-hidden="true" loading="eager" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#15291E] via-[#15291E]/75 to-[#15291E]/10" aria-hidden="true"></div>
+      <div class="relative grid md:grid-cols-2 gap-8 p-6 sm:p-12 items-center">
+        <div class="text-cream">
+          <Badge dark>Contact</Badge>
+          <h1 class="font-serif font-medium tracking-[-0.02em] leading-[1.0] text-5xl sm:text-6xl mt-4">Get in touch<br />with us.</h1>
+          <p class="mt-4 text-cream/75 text-sm max-w-[42ch] leading-relaxed">
+            Questions, feedback, a table for tonight? Write in or just walk up the stairs. Open daily till midnight.
+          </p>
+          <div class="mt-6 text-sm space-y-1.5 text-cream/85">
+            <p><b class="text-cream">Visit:</b> VIP Rd, opp. Marina Grand Hospital, Vesu, Surat 395007</p>
+            <p><b class="text-cream">Plus code:</b> 4QP6+66 Surat</p>
+            <p><b class="text-cream">Hours:</b> Open daily · Closes 12:00 AM</p>
+            <p><b class="text-cream">Phone:</b> <a class="underline underline-offset-4" href="tel:09274073791">092740 73791</a></p>
+          </div>
+        </div>
+        <div class="md:col-start-2 md:row-start-1 md:row-span-2 overflow-hidden rounded-[1.5rem] border border-cream/20 bg-cream">
+          <div class="min-h-[16rem] flex">
+            <iframe
+              title="Belluno on the map — VIP Road, Vesu, Surat"
+              src="https://www.google.com/maps?q=Belluno%20Cafe%20VIP%20Road%20Vesu%20Surat%20Gujarat%20395007&z=16&output=embed"
+              class="w-full min-h-[16rem] border-0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <form id="f" class="border-t border-ink/10 text-ink p-5 sm:p-7 text-sm" novalidate>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="block font-medium"
+                >First name<input required class="mt-1.5 w-full bg-white border border-black/10 rounded-xl px-3 py-2.5 font-normal" placeholder="Aarav" autocomplete="given-name" /></label
+              >
+              <label class="block font-medium"
+                >Last name<input class="mt-1.5 w-full bg-white border border-black/10 rounded-xl px-3 py-2.5 font-normal" placeholder="Patel" autocomplete="family-name" /></label
+              >
+            </div>
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <label class="block font-medium"
+                >Phone<input required type="tel" class="mt-1.5 w-full bg-white border border-black/10 rounded-xl px-3 py-2.5 font-normal" placeholder="98765 43210" autocomplete="tel" /></label
+              >
+              <label class="block font-medium"
+                >Email<input type="email" class="mt-1.5 w-full bg-white border border-black/10 rounded-xl px-3 py-2.5 font-normal" placeholder="you@mail.com" autocomplete="email" /></label
+              >
+            </div>
+            <label class="block font-medium mt-3"
+              >Message<textarea required rows="4" id="cmsg" class="mt-1.5 w-full bg-white border border-black/10 rounded-xl px-3 py-2.5 font-normal" placeholder="A table for four, tonight around eight…"></textarea><span
+                id="cmsgErr"
+                class="hidden text-xs text-red-700 font-medium">Please add a few words so we can help.</span
+              ></label
+            >
+            <button class="btn-fill btn-fill-dark mt-4 w-full bg-ink text-cream font-semibold py-3.5 rounded-full min-h-[48px] active:scale-[0.98]">Send message</button>
+            <p id="ok" class="hidden text-green-800 font-medium mt-2">Thanks! We will call you back shortly.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 bg-white border border-black/5 rounded-[2rem] p-6 sm:p-10 grid md:grid-cols-2 gap-6 shadow-[0_18px_40px_-32px_rgba(28,26,22,0.5)] reveal">
+      <div>
+        <Badge>Our office</Badge>
+        <h2 class="font-serif font-medium tracking-[-0.02em] text-3xl sm:text-4xl mt-3">Walk in, you are<br />always welcome.</h2>
+      </div>
+      <div class="md:text-right md:self-end">
+        <p class="text-xl font-semibold leading-snug">VIP Rd, opp. Marina Grand Hospital,<br />Vesu, Surat 395007</p>
+        <div class="mt-4 flex flex-wrap md:justify-end gap-3">
+          <Button
+            href="https://www.google.com/maps/search/?api=1&query=Belluno+Vesu+Surat+4QP6%2B66"
+            variant="default"
+            size="sm"
+          >
+            Open in Maps ↗
+          </Button>
+          <a class="text-sm font-semibold px-6 py-3 rounded-full border border-black/20 min-h-[44px] inline-flex items-center hover:bg-black/5 transition-colors" href="tel:09274073791">Call us</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('f')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const m = document.getElementById('cmsg') as HTMLTextAreaElement;
+      const err = document.getElementById('cmsgErr') as HTMLElement;
+      if (m.value.trim().length < 4) {
+        err.classList.remove('hidden');
+        m.focus();
+        return;
+      }
+      err.classList.add('hidden');
+      (document.getElementById('ok') as HTMLElement).classList.remove('hidden');
+    });
+  </script>
+</SiteLayout>

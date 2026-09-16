@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# AI search + assistant crawlers are welcome (citation over obscurity)
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+Allow: /
+
+# Training-only crawl, no citation value — keep out
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://belluno.in/sitemap-index.xml

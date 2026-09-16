@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { font-variant-numeric: tabular-nums; }
+h1, h2 { text-wrap: balance; }
+p { max-width: 65ch; }
+:where(a, button):focus-visible { outline: 3px solid #15291e; outline-offset: 3px; border-radius: 8px; }
+
+/* film grain, fixed so it never repaints on scroll */
+.grain::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 5; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+/* scroll reveals */
+.reveal { opacity: 0; transform: translateY(4rem); filter: blur(8px); transition: opacity .9s cubic-bezier(0.32,0.72,0,1), transform .9s cubic-bezier(0.32,0.72,0,1), filter .9s cubic-bezier(0.32,0.72,0,1); }
+.revealed { opacity: 1; transform: none; filter: none; }
+
+/* bottom-up fill buttons */
+.btn-fill { position: relative; isolation: isolate; overflow: hidden; }
+.btn-fill::before { content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; background: #f8f6f0; transform: translateY(102%); transition: transform .55s cubic-bezier(0.16,1,0.3,1); }
+.btn-fill:hover::before { transform: translateY(0); }
+.btn-fill:hover { color: #1c1a16; border-color: transparent; }
+.btn-fill-dark::before { background: #15291e; }
+.btn-fill-dark:hover { color: #f8f6f0; }
+
+/* machined double-bezel cards */
+.bezel { padding: .4rem; border-radius: 2rem; background: rgba(28,26,22,.05); box-shadow: inset 0 0 0 1px rgba(28,26,22,.06); }
+.bezel-inner { border-radius: calc(2rem - .4rem); box-shadow: inset 0 1px 1px rgba(255,255,255,.35); }
+
+/* hero display type + staggered entry */
+.hero-h { font-size: clamp(3.5rem,10vw,10rem); font-weight: 500; letter-spacing: -0.03em; line-height: .9; text-wrap: balance; max-width: 12ch; }
+[data-hero-stagger] > * { opacity: 0; animation: heroIn .45s cubic-bezier(0.16,1,0.3,1) forwards; animation-delay: calc(var(--i,0)*.07s + .05s); }
+@keyframes heroIn { from { opacity: 0; transform: translateY(30px); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+.hero-cta { transition: all .5s cubic-bezier(0.16,1,0.3,1); }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.25); background: #15291e; }
+.hero-cta:active { transform: scale(.98); }
+
+/* kinetic marquee + testimonial river */
+@keyframes marquee { to { transform: translateX(-50%); } }
+#testiTrack { animation: tmarquee 38s linear infinite; }
+@keyframes tmarquee { to { transform: translateX(-50%); } }
+.tmarquee-pause:hover #testiTrack { animation-play-state: paused; }
+
+.fade-mask { -webkit-mask-image: linear-gradient(to bottom,black 55%,transparent 98%); mask-image: linear-gradient(to bottom,black 55%,transparent 98%); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* dotted price leaders */
+.leader { flex: 1 1 auto; border-bottom: 2px dotted rgba(28,26,22,.25); transform: translateY(-4px); min-width: 1.5rem; }
+
+/* admin toggle switches */
+.switch { appearance: none; width: 2.75rem; height: 1.6rem; border-radius: 999px; background: rgba(28,26,22,.18); position: relative; cursor: pointer; transition: background .3s; flex-shrink: 0; margin: 0; }
+.switch::after { content: ""; position: absolute; top: .2rem; left: .2rem; width: 1.2rem; height: 1.2rem; border-radius: 999px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.3); transition: left .3s cubic-bezier(0.16,1,0.3,1); }
+.switch:checked { background: #15291e; }
+.switch:checked::after { left: 1.35rem; }
+
+/* admin drag-sort */
+#rows article { transition: transform .28s cubic-bezier(0.16,1,0.3,1), box-shadow .25s, opacity .25s; }
+#rows article.dragging { transition: none; position: relative; z-index: 30; box-shadow: 0 20px 40px -16px rgba(28,26,22,.45); opacity: .97; cursor: grabbing; }
+#catChips > span { transition: transform .28s cubic-bezier(0.16,1,0.3,1), box-shadow .25s; }
+#catChips > span.dragging { transition: none; position: relative; z-index: 30; box-shadow: 0 12px 24px -12px rgba(0,0,0,.5); cursor: grabbing; }
+.drag-handle { touch-action: none; -webkit-user-select: none; user-select: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-hero-stagger] > * { opacity: 1; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+}
