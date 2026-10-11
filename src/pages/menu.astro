@@ -138,7 +138,7 @@ const menuSchema = {
       cats: Category[];
     };
     const MENU: MenuItem[] = seed.menu.map((m) => ({ ...m }));
-    const CATIMG: Record<string, string> = { brew: '/assets/drink-2.jpg', mocktail: '/assets/drink-3.jpg', food: '/assets/food-2.jpg' };
+    const CATIMG: Record<string, string> = { brew: '/assets/drink-2.avif', mocktail: '/assets/drink-3.avif', food: '/assets/food-2.avif' };
 
     try {
       const saved = JSON.parse(localStorage.getItem('belluno_menu_v1') || 'null');
@@ -166,7 +166,7 @@ const menuSchema = {
       if (Array.isArray(extra))
         extra
           .filter((c) => c && c.key && c.title && !CATS.some((b) => b.key === c.key))
-          .forEach((c) => CATS.push({ key: c.key, title: c.title, blurb: 'Fresh on the board.', img: c.img || '/assets/food-2.jpg', alt: c.title }));
+          .forEach((c) => CATS.push({ key: c.key, title: c.title, blurb: 'Fresh on the board.', img: c.img || '/assets/food-2.avif', alt: c.title }));
     } catch (e) {}
 
     (document.getElementById('jumpPills') as HTMLElement).innerHTML = CATS.map(

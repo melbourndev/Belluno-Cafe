@@ -12,8 +12,8 @@ import Button from '../components/ui/Button.astro';
 >
   <!-- 1 · HERO SLIDER -->
   <section class="relative min-h-[92dvh] overflow-hidden flex flex-col justify-end" aria-label="Belluno spaces">
-    <img id="heroA" src="/assets/rooftop-1.jpg" alt="Rooftop deck at golden hour" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" />
-    <img id="heroB" src="/assets/rooftop-2.jpg" alt="Evening settle on the rooftop" class="absolute inset-0 w-full h-full object-cover opacity-0" loading="lazy" />
+    <img id="heroA" src="/assets/rooftop-1.avif" alt="Rooftop deck at golden hour" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" />
+    <img id="heroB" src="/assets/rooftop-2.avif" alt="Evening settle on the rooftop" class="absolute inset-0 w-full h-full object-cover opacity-0" loading="lazy" />
     <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" aria-hidden="true"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-4 w-full pb-10 pt-40">
       <h1 class="font-extrabold uppercase text-cream leading-[0.88] tracking-[-0.02em] text-[19vw] sm:text-[13vw] lg:text-[10rem]">Sip<br />slow.</h1>
@@ -56,7 +56,7 @@ import Button from '../components/ui/Button.astro';
     <!-- 3 · ARCH SPLIT + STATS -->
     <section class="max-w-6xl mx-auto px-4 pb-20 sm:pb-28 grid lg:grid-cols-2 gap-6 items-stretch reveal">
       <div class="relative overflow-hidden rounded-t-[10rem] rounded-b-[1.75rem] min-h-[26rem] sm:min-h-[32rem]">
-        <img src="/assets/kitchen.jpg" alt="Plates leaving the Belluno kitchen" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/kitchen.avif" alt="Plates leaving the Belluno kitchen" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" aria-hidden="true"></div>
         <div class="absolute bottom-4 inset-x-4 flex items-stretch gap-2">
           <div class="flex-1 bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 text-cream"><p class="font-serif text-3xl">4.6★</p><p class="text-xs text-cream/75 mt-0.5">891 verified reviews</p></div>
@@ -66,7 +66,7 @@ import Button from '../components/ui/Button.astro';
       </div>
       <div class="flex flex-col">
         <div class="overflow-hidden rounded-t-[10rem] rounded-b-[1.75rem] h-60 sm:h-72 shrink-0">
-          <img src="/assets/stairs.jpg" alt="Curved stairs climbing to the rooftop" loading="lazy" class="w-full h-full object-cover" />
+          <img src="/assets/stairs.avif" alt="Curved stairs climbing to the rooftop" loading="lazy" class="w-full h-full object-cover" />
         </div>
         <div class="flex items-end gap-3 mt-6">
           <p class="font-serif font-medium leading-none text-7xl sm:text-8xl text-pine">12<span class="text-3xl align-top">AM</span></p>
@@ -94,10 +94,10 @@ import Button from '../components/ui/Button.astro';
       <div id="mStrip" class="mt-8 grid grid-flow-col auto-cols-[78%] sm:auto-cols-[38%] gap-4 overflow-x-auto no-scrollbar snap-x pb-2">
         {
           [
-            ['/assets/drink-3.jpg', 'Berry mocktail over ice', 'Mocktail hour', 'Berries, mint, soda'],
-            ['/assets/food-1.jpg', 'Pink spaghetti', 'The cult favourite', 'Pink spaghetti, basil'],
-            ['/assets/rooftop-2.jpg', 'Rooftop at dusk', 'Golden hour deck', 'Come before sunset'],
-            ['/assets/food-4.jpg', 'Tiramisu cup', 'Save room', 'Tiramisu, mascarpone'],
+            ['/assets/drink-3.avif', 'Berry mocktail over ice', 'Mocktail hour', 'Berries, mint, soda'],
+            ['/assets/food-1.avif', 'Pink spaghetti', 'The cult favourite', 'Pink spaghetti, basil'],
+            ['/assets/rooftop-2.avif', 'Rooftop at dusk', 'Golden hour deck', 'Come before sunset'],
+            ['/assets/food-4.avif', 'Tiramisu cup', 'Save room', 'Tiramisu, mascarpone'],
           ].map(([img, alt, t, s]) => (
             <figure class="snap-start">
               <div class="overflow-hidden rounded-[1.5rem] h-72 sm:h-96">

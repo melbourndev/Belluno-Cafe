@@ -6,7 +6,7 @@ import BareLayout from '../layouts/BareLayout.astro';
 <BareLayout title="Menu Control — Belluno" bar>
   <div id="adminGate" class="max-w-4xl mx-auto px-4 pt-16 pb-20">
     <div class="max-w-sm mx-auto bg-ink text-cream rounded-[1.75rem] p-7 sm:p-8 text-center">
-      <img src="/assets/logo.jpg" alt="Belluno logo" class="w-14 h-14 rounded-full object-cover mx-auto" />
+      <img src="/assets/logo.avif" alt="Belluno logo" class="w-14 h-14 rounded-full object-cover mx-auto" />
       <p class="font-serif font-medium text-3xl mt-4">Staff only.</p>
       <p class="text-sm text-cream/60 mt-1">Enter the board password to continue.</p>
       <form id="gateForm" class="mt-5 space-y-2">
@@ -76,31 +76,31 @@ import BareLayout from '../layouts/BareLayout.astro';
     type Cat = { key: string; title: string; img: string };
     const KEY = 'belluno_menu_v1';
     const CKEY = 'belluno_cats_v1';
-    const IMG: Record<string, string> = { brew: '/assets/drink-2.jpg', mocktail: '/assets/drink-3.jpg', food: '/assets/food-2.jpg' };
+    const IMG: Record<string, string> = { brew: '/assets/drink-2.avif', mocktail: '/assets/drink-3.avif', food: '/assets/food-2.avif' };
     const PHOTOS: [string, string][] = [
-      ['/assets/drink-1.jpg', 'Latte pour'], ['/assets/drink-2.jpg', 'Cold brew'], ['/assets/drink-3.jpg', 'Mocktail'],
-      ['/assets/food-1.jpg', 'Pink spaghetti'], ['/assets/food-2.jpg', 'Sharing platter'], ['/assets/food-3.jpg', 'Fries'],
-      ['/assets/food-4.jpg', 'Tiramisu'], ['/assets/food-5.jpg', 'Chocolate torte'], ['/assets/kitchen.jpg', 'Kitchen'],
-      ['/assets/rooftop-1.jpg', 'Rooftop day'], ['/assets/rooftop-2.jpg', 'Rooftop dusk'], ['/assets/stairs.jpg', 'Stairs'],
+      ['/assets/drink-1.avif', 'Latte pour'], ['/assets/drink-2.avif', 'Cold brew'], ['/assets/drink-3.avif', 'Mocktail'],
+      ['/assets/food-1.avif', 'Pink spaghetti'], ['/assets/food-2.avif', 'Sharing platter'], ['/assets/food-3.avif', 'Fries'],
+      ['/assets/food-4.avif', 'Tiramisu'], ['/assets/food-5.avif', 'Chocolate torte'], ['/assets/kitchen.avif', 'Kitchen'],
+      ['/assets/rooftop-1.avif', 'Rooftop day'], ['/assets/rooftop-2.avif', 'Rooftop dusk'], ['/assets/stairs.avif', 'Stairs'],
     ];
     const SEEDCATS: Cat[] = [
-      { key: 'brew', title: 'Hot Brews', img: '/assets/drink-2.jpg' },
-      { key: 'mocktail', title: 'Mocktails', img: '/assets/drink-3.jpg' },
-      { key: 'food', title: 'From the Kitchen', img: '/assets/food-1.jpg' },
+      { key: 'brew', title: 'Hot Brews', img: '/assets/drink-2.avif' },
+      { key: 'mocktail', title: 'Mocktails', img: '/assets/drink-3.avif' },
+      { key: 'food', title: 'From the Kitchen', img: '/assets/food-1.avif' },
     ];
     const SEED: Item[] = [
-      { n: 'Espresso', c: 'brew', p: 149, r: '4.5', live: 1, img: '/assets/drink-1.jpg', d: 'Short, bold, honest.' },
-      { n: 'Pistachio Latte', c: 'brew', p: 249, r: '4.8', live: 1, img: '/assets/drink-1.jpg', d: 'Nutty espresso, slow-steamed milk.' },
-      { n: 'Cold Brew Tonic', c: 'brew', p: 229, r: '4.7', live: 1, img: '/assets/drink-2.jpg', d: '18-hour brew, tonic, citrus peel.' },
-      { n: 'Classic Cappuccino', c: 'brew', p: 199, r: '4.6', live: 1, img: '/assets/drink-2.jpg', d: 'Double shot, velvet foam.' },
-      { n: 'Filter Coffee', c: 'brew', p: 169, r: '4.6', live: 1, img: '/assets/drink-2.jpg', d: 'Slow-dripped, jaggery option.' },
-      { n: 'Berry Mocktail', c: 'mocktail', p: 199, r: '4.6', live: 1, img: '/assets/drink-3.jpg', d: 'Fresh berries, mint, soda.' },
-      { n: 'Virgin Mint Cooler', c: 'mocktail', p: 179, r: '4.5', live: 1, img: '/assets/drink-3.jpg', d: 'Mint, lime, crushed ice.' },
-      { n: 'Pink Spaghetti', c: 'food', p: 279, r: '4.9', live: 1, img: '/assets/food-1.jpg', d: 'Rose sauce, basil, parmesan.' },
-      { n: 'Villa Platter', c: 'food', p: 329, r: '4.7', live: 1, img: '/assets/food-2.jpg', d: 'Sharing board, wood-fired bread.' },
-      { n: 'Truffle Fries', c: 'food', p: 189, r: '4.5', live: 1, img: '/assets/food-3.jpg', d: 'Parmesan snow, truffle oil.' },
-      { n: 'Tiramisu Cup', c: 'food', p: 169, r: '4.8', live: 1, img: '/assets/food-4.jpg', d: 'Espresso-soaked, mascarpone.' },
-      { n: 'Choco Torte', c: 'food', p: 179, r: '4.6', live: 1, img: '/assets/food-5.jpg', d: 'Dark chocolate, sea salt.' },
+      { n: 'Espresso', c: 'brew', p: 149, r: '4.5', live: 1, img: '/assets/drink-1.avif', d: 'Short, bold, honest.' },
+      { n: 'Pistachio Latte', c: 'brew', p: 249, r: '4.8', live: 1, img: '/assets/drink-1.avif', d: 'Nutty espresso, slow-steamed milk.' },
+      { n: 'Cold Brew Tonic', c: 'brew', p: 229, r: '4.7', live: 1, img: '/assets/drink-2.avif', d: '18-hour brew, tonic, citrus peel.' },
+      { n: 'Classic Cappuccino', c: 'brew', p: 199, r: '4.6', live: 1, img: '/assets/drink-2.avif', d: 'Double shot, velvet foam.' },
+      { n: 'Filter Coffee', c: 'brew', p: 169, r: '4.6', live: 1, img: '/assets/drink-2.avif', d: 'Slow-dripped, jaggery option.' },
+      { n: 'Berry Mocktail', c: 'mocktail', p: 199, r: '4.6', live: 1, img: '/assets/drink-3.avif', d: 'Fresh berries, mint, soda.' },
+      { n: 'Virgin Mint Cooler', c: 'mocktail', p: 179, r: '4.5', live: 1, img: '/assets/drink-3.avif', d: 'Mint, lime, crushed ice.' },
+      { n: 'Pink Spaghetti', c: 'food', p: 279, r: '4.9', live: 1, img: '/assets/food-1.avif', d: 'Rose sauce, basil, parmesan.' },
+      { n: 'Villa Platter', c: 'food', p: 329, r: '4.7', live: 1, img: '/assets/food-2.avif', d: 'Sharing board, wood-fired bread.' },
+      { n: 'Truffle Fries', c: 'food', p: 189, r: '4.5', live: 1, img: '/assets/food-3.avif', d: 'Parmesan snow, truffle oil.' },
+      { n: 'Tiramisu Cup', c: 'food', p: 169, r: '4.8', live: 1, img: '/assets/food-4.avif', d: 'Espresso-soaked, mascarpone.' },
+      { n: 'Choco Torte', c: 'food', p: 179, r: '4.6', live: 1, img: '/assets/food-5.avif', d: 'Dark chocolate, sea salt.' },
     ];
     function load<T>(k: string, fb: T): T {
       try {
@@ -347,7 +347,7 @@ import BareLayout from '../layouts/BareLayout.astro';
         return;
       }
       err.classList.add('hidden');
-      items.unshift({ n, c: nCat.value, p, r: '4.5', live: 1, img: IMG[nCat.value] || '/assets/food-2.jpg', d: 'New on the board.' });
+      items.unshift({ n, c: nCat.value, p, r: '4.5', live: 1, img: IMG[nCat.value] || '/assets/food-2.avif', d: 'New on the board.' });
       (document.getElementById('nName') as HTMLInputElement).value = '';
       (document.getElementById('nPrice') as HTMLInputElement).value = '';
       persist();

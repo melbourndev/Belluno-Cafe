@@ -11,7 +11,7 @@ type Props = {
   active?: 'home' | 'menu' | 'about' | 'contact';
   image?: string;
 };
-const { title, description, active, image = '/assets/hero-desktop.jpg' } = Astro.props as Props;
+const { title, description, active, image = '/assets/hero-desktop.avif' } = Astro.props as Props;
 const canonical = new URL(Astro.url.pathname, SITE).toString();
 const ogImage = new URL(image, SITE).toString();
 ---
@@ -32,7 +32,7 @@ const ogImage = new URL(image, SITE).toString();
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <link rel="icon" type="image/jpeg" href="/assets/logo.jpg" />
+    <link rel="icon" type="image/avif" href="/assets/logo.avif" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
