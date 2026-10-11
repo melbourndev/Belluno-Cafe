@@ -1,0 +1,28 @@
+---
+/** Thanks — confirmation after the contact form. */
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/ui/Button.astro';
+import { Check } from '@keyline-icons/react/duotone';
+---
+
+<SiteLayout
+  title="Thanks — Belluno Cafe, Vesu Surat"
+  description="Thanks for writing to Belluno. We will call you back shortly."
+>
+  <main id="main" class="max-w-6xl mx-auto px-4 pt-24 pb-24 sm:pt-32 sm:pb-32">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="mx-auto w-20 h-20 rounded-full bg-pine text-cream grid place-items-center">
+        <Check className="size-9" />
+      </span>
+      <h1 class="font-serif font-medium tracking-[-0.02em] text-5xl sm:text-6xl mt-6">Thanks!</h1>
+      <p class="text-sm text-neutral-500 mt-3 max-w-[42ch] mx-auto leading-relaxed">
+        Your message is with us. We will call you back shortly — usually within the hour.
+        In a hurry? Call <a class="underline underline-offset-4 font-semibold text-ink" href="tel:09274073791">092740 73791</a>.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <Button href="/menu">Explore Menu</Button>
+        <Button href="/" variant="outline">Back Home</Button>
+      </div>
+    </div>
+  </main>
+</SiteLayout>

@@ -3,6 +3,7 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Badge from '../components/ui/Badge.astro';
 import Button from '../components/ui/Button.astro';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Star } from '@keyline-icons/react/duotone';
 ---
 
 <SiteLayout
@@ -24,8 +25,8 @@ import Button from '../components/ui/Button.astro';
         </div>
         <div class="flex items-center gap-2">
           <span id="heroCount" class="text-cream/80 text-xs font-semibold tracking-widest mr-1">01 / 02</span>
-          <button id="heroPrev" class="w-11 h-11 rounded-full bg-cream text-ink hover:bg-white active:scale-[0.98] transition font-bold" aria-label="Previous photo">←</button>
-          <button id="heroNext" class="w-11 h-11 rounded-full bg-cream text-ink hover:bg-white active:scale-[0.98] transition font-bold" aria-label="Next photo">→</button>
+          <button id="heroPrev" class="w-11 h-11 rounded-full bg-cream text-ink hover:bg-white active:scale-[0.98] transition grid place-items-center" aria-label="Previous photo"><ArrowLeft className="size-5" /></button>
+          <button id="heroNext" class="w-11 h-11 rounded-full bg-cream text-ink hover:bg-white active:scale-[0.98] transition grid place-items-center" aria-label="Next photo"><ArrowRight className="size-5" /></button>
         </div>
       </div>
     </div>
@@ -46,7 +47,7 @@ import Button from '../components/ui/Button.astro';
           <div>
             <p>Slow coffee dates, deep conversations, peaceful evenings. Every corner poured for lingering, every plate built for sharing.</p>
             <a href="/contact" class="btn-fill btn-fill-dark inline-flex items-center gap-2 mt-5 bg-ink text-cream text-sm font-semibold pl-5 pr-2 py-2 rounded-full"
-              >Plan your visit <span class="w-8 h-8 rounded-full bg-cream/15 grid place-items-center">→</span></a
+              >Plan your visit <span class="w-8 h-8 rounded-full bg-cream/15 grid place-items-center"><ArrowRight className="size-4" /></span></a
             >
           </div>
         </div>
@@ -59,9 +60,9 @@ import Button from '../components/ui/Button.astro';
         <img src="/assets/kitchen.avif" alt="Plates leaving the Belluno kitchen" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" aria-hidden="true"></div>
         <div class="absolute bottom-4 inset-x-4 flex items-stretch gap-2">
-          <div class="flex-1 bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 text-cream"><p class="font-serif text-3xl">4.6★</p><p class="text-xs text-cream/75 mt-0.5">891 verified reviews</p></div>
+          <div class="flex-1 bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 text-cream"><p class="font-serif text-3xl flex items-center gap-1.5">4.6<Star className="size-6" /></p><p class="text-xs text-cream/75 mt-0.5">891 verified reviews</p></div>
           <div class="flex-1 bg-cream/15 backdrop-blur-xl border border-cream/30 rounded-2xl p-4 text-cream"><p class="font-serif text-3xl">12 dishes</p><p class="text-xs text-cream/75 mt-0.5">Brews, mocktails, kitchen</p></div>
-          <a href="/menu" aria-label="See the menu" class="w-14 rounded-2xl bg-cream text-ink grid place-items-center text-xl hover:bg-white active:scale-[0.98] transition">↗</a>
+          <a href="/menu" aria-label="See the menu" class="w-14 rounded-2xl bg-cream text-ink grid place-items-center hover:bg-white active:scale-[0.98] transition"><ArrowUpRight className="size-5" /></a>
         </div>
       </div>
       <div class="flex flex-col">
@@ -73,9 +74,9 @@ import Button from '../components/ui/Button.astro';
           <p class="text-sm text-neutral-500 pb-2">Open every day,<br />late into the night</p>
         </div>
         <ul class="mt-5 space-y-2.5 text-sm font-medium">
-          <li class="flex gap-2.5"><span class="text-pine font-bold">✓</span> Rooftop seating under warm light</li>
-          <li class="flex gap-2.5"><span class="text-pine font-bold">✓</span> Wood-fired kitchen, honest coffee</li>
-          <li class="flex gap-2.5"><span class="text-pine font-bold">✓</span> Dine-in + takeaway, no rush</li>
+          <li class="flex gap-2.5 items-center"><span class="text-pine font-bold inline-flex"><Check className="size-4" /></span> Rooftop seating under warm light</li>
+          <li class="flex gap-2.5 items-center"><span class="text-pine font-bold inline-flex"><Check className="size-4" /></span> Wood-fired kitchen, honest coffee</li>
+          <li class="flex gap-2.5 items-center"><span class="text-pine font-bold inline-flex"><Check className="size-4" /></span> Dine-in + takeaway, no rush</li>
         </ul>
       </div>
     </section>
@@ -87,8 +88,8 @@ import Button from '../components/ui/Button.astro';
         <span class="tracking-[0.2em] uppercase">Moments</span>
         <span class="flex-1 border-t border-black/10"></span>
         <div class="flex gap-2">
-          <button id="mPrev" class="w-10 h-10 rounded-full border border-black/15 hover:bg-black/5 active:scale-[0.98] transition" aria-label="Scroll moments back">←</button>
-          <button id="mNext" class="w-10 h-10 rounded-full border border-black/15 hover:bg-black/5 active:scale-[0.98] transition" aria-label="Scroll moments forward">→</button>
+          <button id="mPrev" class="w-10 h-10 rounded-full border border-black/15 hover:bg-black/5 active:scale-[0.98] transition grid place-items-center" aria-label="Scroll moments back"><ArrowLeft className="size-4" /></button>
+          <button id="mNext" class="w-10 h-10 rounded-full border border-black/15 hover:bg-black/5 active:scale-[0.98] transition grid place-items-center" aria-label="Scroll moments forward"><ArrowRight className="size-4" /></button>
         </div>
       </div>
       <div id="mStrip" class="mt-8 grid grid-flow-col auto-cols-[78%] sm:auto-cols-[38%] gap-4 overflow-x-auto no-scrollbar snap-x pb-2">

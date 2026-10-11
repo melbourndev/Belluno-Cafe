@@ -4,6 +4,7 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import Badge from '../components/ui/Badge.astro';
 import Button from '../components/ui/Button.astro';
 import Schema from '../components/Schema.astro';
+import { ArrowUpRight } from '@keyline-icons/react/duotone';
 import { SITE, BUSINESS } from '../lib/site';
 
 const localSchema = {
@@ -83,7 +84,6 @@ const localSchema = {
               ></label
             >
             <button class="btn-fill btn-fill-dark mt-4 w-full bg-ink text-cream font-semibold py-3.5 rounded-full min-h-[48px] active:scale-[0.98]">Send message</button>
-            <p id="ok" class="hidden text-green-800 font-medium mt-2">Thanks! We will call you back shortly.</p>
           </form>
         </div>
       </div>
@@ -102,7 +102,7 @@ const localSchema = {
             variant="default"
             size="sm"
           >
-            Open in Maps ↗
+            Open in Maps <ArrowUpRight className="size-4" />
           </Button>
           <a class="text-sm font-semibold px-6 py-3 rounded-full border border-black/20 min-h-[44px] inline-flex items-center hover:bg-black/5 transition-colors" href="tel:09274073791">Call us</a>
         </div>
@@ -121,7 +121,7 @@ const localSchema = {
         return;
       }
       err.classList.add('hidden');
-      (document.getElementById('ok') as HTMLElement).classList.remove('hidden');
+      window.location.href = '/thanks';
     });
   </script>
 </SiteLayout>

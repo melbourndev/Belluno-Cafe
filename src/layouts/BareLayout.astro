@@ -4,6 +4,7 @@
  * Admin gets its own slim utility bar; 404 is fully standalone.
  */
 import '../styles/global.css';
+import { ArrowRight } from '@keyline-icons/react/duotone';
 
 type Props = { title: string; description?: string; bar?: boolean };
 const { title, description = 'Belluno — Vesu, Surat.', bar } = Astro.props as Props;
@@ -33,8 +34,8 @@ const { title, description = 'Belluno — Vesu, Surat.', bar } = Astro.props as 
             <img src="/assets/logo.avif" alt="Belluno logo" class="w-8 h-8 rounded-full object-cover" />
             Belluno <span class="font-normal text-neutral-400">/ staff</span>
           </a>
-          <a href="/menu" class="text-xs font-semibold px-4 py-2.5 rounded-full bg-ink text-cream">
-            View menu →
+          <a href="/menu" class="text-xs font-semibold px-4 py-2.5 rounded-full bg-ink text-cream inline-flex items-center gap-1.5">
+            View menu <ArrowRight className="size-3.5" />
           </a>
         </div>
       )

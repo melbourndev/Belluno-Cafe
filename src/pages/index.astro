@@ -4,8 +4,11 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import Badge from '../components/ui/Badge.astro';
 import Button from '../components/ui/Button.astro';
 import Schema from '../components/Schema.astro';
+import { Star, ArrowRight, Plus, Quote } from '@keyline-icons/react/duotone';
 import { SIGNATURES, TESTIMONIALS, GALLERY } from '../data/site';
 import { SITE, BUSINESS } from '../lib/site';
+
+const stars = [0, 1, 2, 3, 4];
 
 const catLabel: Record<string, string> = { brew: 'Hot Brew', mocktail: 'Mocktail', food: 'From Kitchen' };
 const river = [...TESTIMONIALS, ...TESTIMONIALS];
@@ -81,12 +84,12 @@ const faqSchema = {
           <span class="w-11 h-11 rounded-full border-2 border-cream/80 bg-cream text-ink text-[10px] font-bold grid place-items-center">891+</span>
         </div>
         <div class="text-left">
-          <div class="tracking-widest text-sm text-amber-300">★★★★★ <span class="text-cream font-bold">4.6</span></div>
+          <div class="tracking-widest text-sm text-amber-300 flex items-center gap-0.5">{stars.map(() => <Star className="size-4" />)} <span class="text-cream font-bold ml-1">4.6</span></div>
           <p class="text-xs text-cream/75">891 verified patron reviews</p>
         </div>
       </div>
       <div class="mt-6 flex flex-wrap justify-center gap-3" style="--i:4">
-        <Button href="/menu" variant="cream">Explore Menu →</Button>
+        <Button href="/menu" variant="cream">Explore Menu <ArrowRight className="size-4" /></Button>
         <Button href="/contact" variant="creamOutline">Find Us</Button>
       </div>
     </div>
@@ -108,7 +111,7 @@ const faqSchema = {
           <h2 class="text-4xl sm:text-5xl font-serif font-medium tracking-[-0.02em] mt-3">Loved by Surat</h2>
         </div>
         <a href="/menu" class="group text-sm font-semibold inline-flex items-center gap-2"
-          >Full menu <span class="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">→</span></a
+          >Full menu <span class="w-8 h-8 rounded-full bg-black/5 grid place-items-center transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1"><ArrowRight className="size-4" /></span></a
         >
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -122,7 +125,7 @@ const faqSchema = {
                     <span class="text-[11px] font-semibold text-white bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full">{catLabel[m.cat] ?? m.cat}</span>
                     <span class="text-[11px] font-semibold text-white bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full">Veg</span>
                   </div>
-                  <span class="text-[11px] font-semibold text-white bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full shrink-0">★ {m.rating}</span>
+                  <span class="text-[11px] font-semibold text-white bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full shrink-0 inline-flex items-center gap-1"><Star className="size-3" /> {m.rating}</span>
                 </div>
                 <div class="absolute bottom-3 inset-x-3 rounded-2xl bg-gradient-to-t from-black/50 to-white/10 backdrop-blur-xl border border-white/30 p-4 text-white">
                   <h3 class="font-semibold text-lg leading-tight">{m.name}</h3>
@@ -130,7 +133,7 @@ const faqSchema = {
                   <div class="mt-3 flex items-center justify-between gap-2">
                     <span class="text-sm font-bold text-ink bg-cream px-4 py-2 rounded-full">₹{m.price}</span>
                     <a href="/menu" class="group/btn text-sm font-semibold text-ink bg-cream pl-4 pr-1.5 py-1.5 rounded-full inline-flex items-center gap-2 hover:bg-white active:scale-[0.98] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                      Add <span class="w-7 h-7 rounded-full bg-ink text-cream flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:translate-x-0.5">+</span>
+                      Add <span class="w-7 h-7 rounded-full bg-ink text-cream grid place-items-center transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:translate-x-0.5"><Plus className="size-4" /></span>
                     </a>
                   </div>
                 </div>
@@ -179,7 +182,7 @@ const faqSchema = {
             <span class="w-10 h-10 rounded-full border-2 border-cream bg-ink text-cream text-[10px] font-bold grid place-items-center">891+</span>
           </div>
           <div class="text-left">
-            <div class="tracking-widest text-sm text-amber-600">★★★★★ <span class="text-ink font-bold">4.6</span></div>
+            <div class="tracking-widest text-sm text-amber-600 flex items-center gap-0.5">{stars.map(() => <Star className="size-4" />)} <span class="text-ink font-bold ml-1">4.6</span></div>
             <p class="text-xs text-neutral-500">4.6 stars from 891 verified patrons</p>
           </div>
         </div>
@@ -193,7 +196,7 @@ const faqSchema = {
                   <img src={t.img} class="h-44 w-full object-cover fade-mask transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" alt={`Patron photo (stand-in) — ${t.n}`} loading="lazy" />
                 </div>
                 <div class="p-6 pt-2">
-                  <div class="text-3xl font-serif leading-none">“</div>
+                  <div class="text-pine"><Quote className="size-7" /></div>
                   <p class="text-sm leading-relaxed mt-1">{t.q}</p>
                   <p class="mt-4 text-xs text-neutral-400 text-right">— {t.n} · verified patron</p>
                 </div>
@@ -227,7 +230,7 @@ const faqSchema = {
               <details class="group py-5" open={open ? true : undefined}>
                 <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold list-none">
                   {q}
-                  <span class="w-8 h-8 shrink-0 rounded-full bg-black/5 grid place-items-center transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-open:rotate-45">+</span>
+                  <span class="w-8 h-8 shrink-0 rounded-full bg-black/5 grid place-items-center transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-open:rotate-45"><Plus className="size-4" /></span>
                 </summary>
                 <p class="text-sm text-neutral-500 mt-2 max-w-[55ch] leading-relaxed">{a}</p>
               </details>
